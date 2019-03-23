@@ -1,0 +1,99 @@
+{
+    "interactionModel": {
+        "languageModel": {
+            "invocationName": "aws doctor",
+            "intents": [{
+                    "name": "AMAZON.CancelIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.HelpIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.StopIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.FallbackIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.NavigateHomeIntent",
+                    "samples": []
+                },
+                {
+                    "name": "GetEnvironmentIntent",
+                    "slots": [{
+                        "name": "environment",
+                        "type": "AMAZON.SearchQuery",
+                        "samples": [
+                            "{environment}"
+                        ]
+                    }],
+                    "samples": [
+                        "use environment {environment}",
+                        "take environment {environment}",
+                        "select environment {environment}"
+                    ]
+                },
+                {
+                    "name": "GetServiceIntent",
+                    "slots": [{
+                        "name": "service",
+                        "type": "AMAZON.SearchQuery"
+                    }],
+                    "samples": [
+                        "take service {service}",
+                        "use service {service}"
+                    ]
+                },
+                {
+                    "name": "ECStartIntent",
+                    "slots": [],
+                    "samples": [
+                        "play",
+                        "start it",
+                        "put it on",
+                        "start"
+                    ]
+                },
+                {
+                    "name": "ECStopIntent",
+                    "slots": [],
+                    "samples": [
+                        "shut it down",
+                        "pause",
+                        "shutdown",
+                        "stop",
+                        "stop it"
+                    ]
+                }
+            ],
+            "types": []
+        },
+        "dialog": {
+            "intents": [{
+                "name": "GetEnvironmentIntent",
+                "confirmationRequired": false,
+                "prompts": {},
+                "slots": [{
+                    "name": "environment",
+                    "type": "AMAZON.SearchQuery",
+                    "confirmationRequired": false,
+                    "elicitationRequired": true,
+                    "prompts": {
+                        "elicitation": "Elicit.Slot.460569302620.93841635329"
+                    }
+                }]
+            }]
+        },
+        "prompts": [{
+            "id": "Elicit.Slot.460569302620.93841635329",
+            "variations": [{
+                "type": "PlainText",
+                "value": "can you specify the environment?"
+            }]
+        }]
+    }
+}
